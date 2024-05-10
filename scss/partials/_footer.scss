@@ -1,0 +1,104 @@
+@use "var" as *;
+@use "mixins" as *;
+
+.footer {
+ background: $lightBlue;
+ padding: 20px 0;
+
+ @include desktop {
+  padding: 32px 0;
+}
+
+  &__inner {
+    &-top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      &-item {
+        flex-basis: 100%;
+        margin-bottom: 24px;
+
+        @include tablet-mini-min {
+          flex-basis: 48%;
+        }
+
+        @include tablet {
+          flex-basis: 31%;
+        }
+
+        @include desktop {
+          flex-basis: 253px;
+          margin-bottom: 0;
+        }
+        
+        &-logo {
+          margin: 0 0 15px;
+        }
+
+        &-text {
+          display: block;
+          color: #A1ABB9;
+          padding: 0 0 20px;
+        }
+
+        &-links {
+          display: flex;
+          gap: 20px;
+        }
+      }
+    }
+    
+    &-bottom {
+      padding-top: 24px;
+      border-top: 1px solid #ECEEEF;
+
+      @include desktop {
+        border-top: none;
+        border-bottom: 1px solid #ECEEEF;
+        padding-top: 71px;
+      }
+      &-text {
+        font-size: 12px;
+        line-height: 18px;
+        color: $grey;
+        margin: 0;
+
+        @include desktop {
+          font-size: 16px;
+          line-height: 24px;
+          margin: 0 0 1px;
+        }
+      }
+    }
+  }
+
+  &__nav-list {
+    @include resetList;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    @include desktop {
+      gap: 16px;
+    }
+
+    &-item {
+      &:first-child {
+        color: #A1ABB9;
+        margin-bottom: 4px;
+      }
+    }
+
+    &-link {
+      text-decoration: none;
+      color: $midnight;
+
+      &:hover {
+        @include hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

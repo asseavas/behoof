@@ -1,0 +1,74 @@
+@use "mixins" as *;
+@use "var" as *;
+
+.purpose {
+  margin-top: 71px;
+  margin-bottom: 40px;
+
+  @include desktop {
+    margin-top: 110px;
+    margin-bottom: 126px;
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    margin: 0 0 16px;
+
+    @include tablet-mini-min {
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 32px;
+      margin: 0 0 20px;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &-card {
+      margin-bottom: 12px;
+      flex-basis: 100%;
+
+      @include tablet-mini-min {
+        flex-basis: calc(50% - 32px);
+      }
+
+      @include desktop {
+        flex-basis: calc(25% - 32px);
+        margin-bottom: 0;
+      }
+
+      &-number {
+        font-size: 32px;
+        font-weight: 800;
+        line-height: 48px;
+        margin: 0 0 4px;
+        color: $colorBrand;
+
+        @include tablet-mini-min {
+          font-size: 48px;
+          line-height: 64px;
+        }
+      }
+
+      &-text {
+        color: $midnight;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 14px;
+        margin: 0;
+
+        @include tablet-mini-min {
+          color: $mainColor;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+}

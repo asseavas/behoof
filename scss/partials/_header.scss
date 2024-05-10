@@ -1,0 +1,108 @@
+@use "mixins" as *;
+@use "var" as *;
+
+.header {
+  background: $lightBlue;
+  padding: 23px 0 13px;
+  margin-bottom: 56px;
+
+  @include tablet-mini {
+    padding: 11px 0;
+  }
+
+  @include tablet-mini-min {
+    margin-bottom: 92px;
+  }
+
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo-block {
+    display: flex;
+    align-items: center;
+    margin-bottom: 19px;
+
+    @include tablet-mini {
+      margin-bottom: 0;
+    }
+  }
+
+  &__logo {
+    margin-right: 12px;
+    
+    @include tablet-mini {
+      margin-right: 23px;
+    }
+
+    &-img {
+      max-width: 124px;
+
+      @include tablet-mini {
+        max-width: 186px;
+      }
+    }
+  }
+
+  &__text {
+    color: $midnight;
+    font-size: 12px;
+    line-height: 16px;
+    margin: 0;
+
+    @include tablet-mini {
+      line-height: 18px;
+      font-size: 14px;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+  }
+
+  &__btn {
+    &:hover {
+      @include hover{
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__links-block {
+    margin-left: 38px;
+    display: flex;
+
+    &-link {
+      text-decoration: none;
+      color: $grey;
+      display: inline-block;
+      font-size: 10px;
+      line-height: 12px;
+      padding-top: 32px;
+
+      &:hover {
+        @include hover{
+          text-decoration: underline;
+        }
+      }
+
+      &:first-child {
+        margin-right: 34px;
+      }
+    }
+  }
+
+  &__link {
+    &_analysis {
+      background: url(../images/ic-analysis.svg) center top no-repeat;
+    }
+
+    &_user {
+      background: url(../images/ic-user.svg) center top no-repeat;
+    }
+  }
+}

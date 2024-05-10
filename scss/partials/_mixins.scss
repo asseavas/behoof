@@ -1,0 +1,41 @@
+@mixin resetList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin mobile {
+  @media screen and (min-width: 510px) {
+    @content;
+  }
+}
+
+@mixin tablet-mini-min {
+  @media screen and (min-width: 630px) {
+    @content;
+  }
+}
+
+@mixin tablet-mini {
+  @media screen and (min-width: 760px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: 800px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: 1150px) {
+    @content;
+  }
+}
+
+@mixin hover {
+  @media (hover: hover) and (pointer: fine) {
+    @content
+  }
+}

@@ -1,0 +1,30 @@
+@use "var" as *;
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0;
+  color: $mainColor;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+.container {
+  max-width: 1470px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

@@ -1,0 +1,103 @@
+@use "mixins" as *;
+@use "var" as *;
+
+.reviews {
+  @include tablet {
+    margin: 0 0 90px;
+  }
+
+  @include desktop {
+    margin: 0 0 136px;
+  }
+  
+  &__title-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    &-title {
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 32px;
+      margin: 0;
+    }
+
+    &-link {
+      padding: 0 28px 0 0;
+
+      &:hover {
+        @include hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  &__cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    @include desktop {
+      justify-content: space-between;
+    }
+
+    &-card {
+      border-radius: 12px;
+      overflow: hidden;
+      background: #F6F7FA;
+      flex-basis: 100%;
+      margin-bottom: 51px;
+      display: flex;
+      flex-direction: column;
+
+      @include mobile {
+        flex-basis: calc(50% - 12px);
+      }
+
+      @include tablet {
+        flex-basis: calc(33% - 12px);
+      }
+
+      @include desktop {
+        flex-basis: calc(25% - 24px);
+        margin-bottom: 0;
+      }
+
+      &-image {
+        display: inline-block;
+        width: 100%;
+      }
+      
+      &-info {
+        padding: 16px 16px 0;
+
+        &-title {
+          font-size: 20px;
+          font-weight: 600;
+          line-height: 24px;
+          margin: 0 0 12px;
+          color: $midnight;
+        }
+
+        &-text {
+          color: $grey;
+          margin: 0 0 12px;
+        }
+      }
+
+      &-link {
+        width: 103px;
+        margin-top: auto;
+        margin: auto 16px 16px;
+
+        &:hover {
+          @include hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}

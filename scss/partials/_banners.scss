@@ -1,0 +1,76 @@
+@use "mixins" as *;
+@use "var" as *;
+
+.banners {
+  margin-bottom: 62px;
+  @include tablet-mini-min {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  @include desktop {
+    margin-bottom: 99px;
+  }
+
+  &__btn {
+    &:hover {
+      @include hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__banner {
+    background: linear-gradient(114.99deg, #FFF8F6 8.09%, #F2F5F9 63.32%);
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 12px;
+
+    @include tablet-mini-min {
+      width: 65%;
+      margin-bottom: 0;
+      padding: 40px;
+    }
+
+    &-text {
+      font-size: 20px;
+      font-weight: 800;
+      line-height: 28px;
+      margin: 0 0 12px;
+
+      @include desktop {
+        font-size: 48px;
+        line-height: 72px;
+        margin: 0 0 32px;
+      }
+
+      &_red {
+        color: $colorBrand;
+      }
+
+      &_sm {
+        @include desktop {
+          font-size: 40px;
+          line-height: 58px;
+          margin: 0 0 40px;
+        }
+      }
+    }
+
+    &_sm {
+      background: url(../images/banner-bg.png) right 20px bottom / 135px auto no-repeat,
+      linear-gradient(114.99deg, #FFF8F6 8.09%, #F2F5F9 63.32%);
+
+      @include tablet-mini-min {
+        width: calc(35% - 32px);
+        margin-left: 32px;
+        padding: 60px 20px 40px 40px;
+      }
+
+      @include desktop {
+        background: url(../images/banner-bg.png) right 44px bottom / 199px auto no-repeat,
+        linear-gradient(114.99deg, #FFF8F6 8.09%, #F2F5F9 63.32%);
+      }
+    }
+  }
+}
